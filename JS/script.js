@@ -21,6 +21,15 @@ const chelsea_team = [
   "Mudryk",
   "Nkunku",
 ];
+/*
+const ruolo = [
+  "difensore",
+  "difensore",
+  "centrocampista",
+  "centrocampista",
+  "attaccante",
+  "attaccante",
+];*/
 // Stampare informazioni su DOM come card.
 
 const chelsea_teamEl = document.getElementById("team");
@@ -28,7 +37,7 @@ const chelsea_teamEl = document.getElementById("team");
 for (let i = 0; i < chelsea_team.length; i++) {
   const member = chelsea_team[i];
   const memberEl = document.createElement("div");
-  memberEl.classList.add("col-2", "text-primary");
+  memberEl.classList.add("col-2", "text-primary", "card");
   memberEl.append(member);
   chelsea_teamEl.appendChild(memberEl);
   //aggiunge/rimuove una classe per evidenziare un componente del team.
@@ -37,3 +46,39 @@ for (let i = 0; i < chelsea_team.length; i++) {
     this.classList.toggle("text-white");
   });
 }
+
+/*
+// Bonus1 : organizzare i singoli membri in card/schede.
+
+const chelsea_teamEl = document.getElementById("team");
+
+for (let i = 0; i < chelsea_team.length; i++) {
+  const member = chelsea_team[i];
+  const colEl = document.createElement("div");
+  colEl.classList.add("col-2");
+  const cardEl = document.createElement("div");
+  cardEl.classList.add("card");
+  const bodyEl = document.createElement("div");
+  bodyEl.classList.add("card-body");
+  const memberEl = document.createElement("h5");
+  memberEl.classList.add("card-title");
+  memberEl.append(member);
+  chelsea_teamEl.appendChild(memberEl);
+}
+
+  //aggiunge/rimuove una classe per evidenziare un componente del team.
+  memberEl.addEventListener("click", function () {
+    this.classList.toggle("bg-primary");
+    this.classList.toggle("text-white");
+  });
+}
+
+const ruoloEl = document.getElementById("ruolo");
+for (let i = 0; i < ruolo.length; index++) {
+  const position = ruolo[i];
+  const positionEl = document.createElement("p");
+  positionEl.classList.add("card-text");
+  positionEl.append(position);
+  ruoloEl.appendChild(positionEl);
+}
+*/
